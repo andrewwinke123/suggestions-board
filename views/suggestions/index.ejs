@@ -1,0 +1,27 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Suggestions</h1>
+  <% if (user) { %>
+    <h2>Add a Suggestion!</h2>
+    <form action="/suggestions" method="POST">
+      <label>
+        Name: 
+        <input type="text" name="name" autocomplete="off">
+      </label>
+      <label>
+        Passive? or Aggressive?
+        <input type="checkbox" name="passive">
+      </label>
+      <button type="submit">Suggestion</button>
+    </form>
+  <% } %>
+  <ul>
+    <% suggestions.forEach(suggestion => { %>
+      <li>Suggestion: <%= suggestion.name %> is <%= suggestion.passive ? 'passive' : 'aggressive' %></li>
+    <% }) %>
+  </ul>
+</section>
+
+<%- include('../partials/footer') %>
