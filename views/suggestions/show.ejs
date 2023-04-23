@@ -3,23 +3,23 @@
 
 <section>
 	<p>From the desk of <%= suggestion.owner.name %>...</p>
-  <h1><%= suggestion.name %> here</h1>
-  <h2>This suggestion is <%= suggestion.passive ? 'passive 🥺' : 'not aggresive 😫' %></h2>
-  <%= if (user) { %>
+  <h1><%= suggestion.name %> </h1>
+  <h2>This suggestion was made <%= suggestion.passive ? 'passively 🥺' : 'passive aggresivevly 😫' %></h2>
+  <% if (user) { %>
     <form 
       action="/suggestions/<%= suggestion._id %>/flip-passive?_method=PATCH" 
       METHOD="POST"
       >
       <button class="btn" type="submit">
-        Make suggestion <%= suggestion.passive ? 'passively 🥺' : 'aggresively 😤' %>
+        Make suggestion <%= suggestion.passive ? 'aggresively 😤' : 'passively 🥺' %>
       </button>
     </form>
-  <%= } %>
-  <%= if(suggestion.owner.equals(user?.profile._id)) { %>
+  <% } %>
+  <% if (suggestion.owner.equals(user?.profile._id)) { %>
     <a href="/suggestions/<%= suggestion._id %>/edit">
       <button class="btn"> Edit this Suggestion 🏗️</button>
     </a>
-  <%= } %>
+  <% } %>
 </section>
 
 <%- include('../partials/footer') %>

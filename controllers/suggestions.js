@@ -73,6 +73,26 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  Suggestion.findById(req.params.suggestionId)
+  .then(suggestion => {
+    if (suggestion.owner.equals(req.user.profile._id)) {
+      req.body.passive = !!req.body.passive
+      suggestion.updateOne(req.body)
+      .then(()=> {
+        res.redirect(`/suggections/${suggestion._id}`)
+      })
+    } else {
+      throw new Error('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/suggestions')
+  })
+}
+
+
 
 
 export {
@@ -81,4 +101,5 @@ export {
   show,
   flipPassively,
   edit,
+  update,
 }

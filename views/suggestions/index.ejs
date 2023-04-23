@@ -19,7 +19,8 @@
   <% } %>
   <ul>
     <% suggestions.forEach(suggestion => { %>
-      <li>Suggestion: <%= suggestion.name %> is <%= suggestion.passive ? 'passive' : 'aggressive' %></li>
+      <li>
+        <a href="/suggestions/<%= suggestion._id %>"><%= suggestion.name %></a> is <%= suggestion.passive ? 'passive' : 'aggressive' %></li>
     <% }) %>
   </ul>
 </section>
