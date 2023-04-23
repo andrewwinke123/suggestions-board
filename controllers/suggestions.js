@@ -3,10 +3,12 @@ import { Suggestion } from "../models/suggestion.js"
 
 function index(req, res) {
   Suggestion.find({})
+  .populate('owner')
   .then(suggestions => {
+    console.log(suggestions)
     res.render('suggestions/index', {
       suggestions,
-      title: 'test'
+      title: 'Suggestions?'
     })
   })
   .catch(err => {
@@ -69,7 +71,7 @@ function edit(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/suggestions')
+    res.redirect('/')
   })
 }
 

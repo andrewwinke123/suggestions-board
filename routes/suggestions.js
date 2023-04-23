@@ -19,9 +19,8 @@ router.patch('/:suggestionId/flip-passive', isLoggedIn, suggestionsCtrl.flipPass
 // GET localhost:3000/suggestions/:suggestionId/edit
 router.get('/:suggestionId/edit', isLoggedIn, suggestionsCtrl.edit)
 
-
 // PUT localhost:3000/suggestions/:suggestionId
-router.put('/:suggestionId', isLoggedIn, suggestionsCtrl.update)
+router.put('/:suggestioId', isLoggedIn, suggestionsCtrl.update)
 
 
 

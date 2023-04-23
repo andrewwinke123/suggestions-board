@@ -3,12 +3,13 @@
 
 <section>
 	<p>From the desk of <%= suggestion.owner.name %>...</p>
+  <img src="<%= suggestion.owner.avatar %>" alt="<%= suggestion.owner.name %>'s avatar">
   <h1><%= suggestion.name %> </h1>
   <h2>This suggestion was made <%= suggestion.passive ? 'passively 🥺' : 'passive aggresivevly 😫' %></h2>
   <% if (user) { %>
     <form 
       action="/suggestions/<%= suggestion._id %>/flip-passive?_method=PATCH" 
-      METHOD="POST"
+      method="POST"
       >
       <button class="btn" type="submit">
         Make suggestion <%= suggestion.passive ? 'aggresively 😤' : 'passively 🥺' %>
