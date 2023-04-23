@@ -1,0 +1,25 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+	<p>From the desk of <%= suggestion.owner.name %>...</p>
+  <h1><%= suggestion.name %> here</h1>
+  <h2>This suggestion is <%= suggestion.passive ? 'passive 🥺' : 'not aggresive 😫' %></h2>
+  <%= if (user) { %>
+    <form 
+      action="/suggestions/<%= suggestion._id %>/flip-passive?_method=PATCH" 
+      METHOD="POST"
+      >
+      <button class="btn" type="submit">
+        Make suggestion <%= suggestion.passive ? 'passively 🥺' : 'aggresively 😤' %>
+      </button>
+    </form>
+  <%= } %>
+  <%= if(suggestion.owner.equals(user?.profile._id)) { %>
+    <a href="/suggestions/<%= suggestion._id %>/edit">
+      <button class="btn"> Edit this Suggestion 🏗️</button>
+    </a>
+  <%= } %>
+</section>
+
+<%- include('../partials/footer') %>

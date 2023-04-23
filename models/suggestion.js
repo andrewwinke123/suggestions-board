@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import { isLoggedIn } from '../middleware/middleware.js'
 
 const Schema = mongoose.Schema
 
