@@ -18,6 +18,9 @@ body {
   font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
     'Helvetica Neue', sans-serif;
   margin: 0;
+  border: 10px solid #17b7b5;
+  height: 120vh;
+  overflow: hidden;
 }
 
 nav {
