@@ -4,22 +4,25 @@
 <section>
 	<p>From the desk of <%= suggestion.owner.name %>...</p>
   <img src="<%= suggestion.owner.avatar %>" alt="<%= suggestion.owner.name %>'s avatar">
-  <h1><%= suggestion.name %> </h1>
-  <h2>This suggestion was made <%= suggestion.passive ? 'passively 🥺' : 'passive aggresivevly 😫' %></h2>
+  <h3><%= suggestion.name %> </h3>
+  <h2 id="passive-identifier">This suggestion was made <%= suggestion.passive ? 'passively 🥺' : 'passive aggresivevly 😫' %></h2>
   <% if (user) { %>
     <form 
       action="/suggestions/<%= suggestion._id %>/flip-passive?_method=PATCH" 
       method="POST"
       >
-      <button class="btn" type="submit">
-        Make suggestion <%= suggestion.passive ? 'aggresively 😤' : 'passively 🥺' %>
+      <button id="buttons" class="btn" type="submit">
+        Suggest <%= suggestion.passive ? 'aggresively 😤' : 'passively 🥺' %>
       </button>
     </form>
   <% } %>
   <% if (suggestion.owner.equals(user?.profile._id)) { %>
     <a href="/suggestions/<%= suggestion._id %>/edit">
-      <button class="btn"> Edit this Suggestion 🏗️</button>
+      <button id="buttons" class="btn"> Edit this Suggestion 🏗️</button>
     </a>
+    <form action="/suggestions/<%= suggestion._id %>?_method=DELETE" method="POST">
+    <button id="buttons" class="btn" type="submit">Shun this suggestion 🙈</button>
+  </form>
   <% } %>
 </section>
 

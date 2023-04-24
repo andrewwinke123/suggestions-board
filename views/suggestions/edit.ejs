@@ -3,21 +3,19 @@
 
 <section>
   <h1>Edit the Suggestion! 🏗️</h1>
-  <h2><%= suggestion.name %></h2>
   <form action="/suggestions/<%= suggestion._id %>?_method=PUT" method="POST">
     <label>
-      Suggestion: 
-      <input 
-        type="text"
-        name="name" 
-        value="<%= suggestion.name %>" 
+      <textarea type="text" name="name" autocomplete="off" cols="30" rows="5"value="<%= suggestion.name %>" 
         autocomplete="off"
-      >
+        ><%= suggestion.name %>
+      </textarea>
     </label>
-      <label 
+    <button id="edit-button" class="btn" type="submit">Edit</button>
+    <br>  
+    <label 
         for="myRange">Passive</label>
         <input type="range" min="1" max="100" value="50" class="slider" id="myRange" name="passive">Aggressive
-    </label>    <button type="submit">Edit the suggestion</button>
+    </label>    
   </form>
 </section>
 
