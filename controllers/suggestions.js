@@ -5,7 +5,6 @@ function index(req, res) {
   Suggestion.find({})
   .populate('owner')
   .then(suggestions => {
-    console.log(suggestions)
     res.render('suggestions/index', {
       suggestions,
       title: 'Suggestions?'
@@ -113,6 +112,43 @@ function deleteSuggestion(req, res) {
 }
 
 
+function passive(req, res) {
+  Suggestion.find({})
+  .populate('owner')
+  .then(suggestions => {
+    res.render('suggestions/passive', {
+      suggestions,
+      title: 'Suggestions?'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
+
+function aggressive(req, res) {
+  Suggestion.find({})
+  .populate('owner')
+  .then(suggestions => {
+    res.render('suggestions/aggressive', {
+      suggestions,
+      title: 'Suggestions?'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
+
+
+
+
+
+
 export {
   index,
   create,
@@ -120,5 +156,7 @@ export {
   flipPassively,
   edit,
   update,
-  deleteSuggestion
+  deleteSuggestion,
+  passive,
+  aggressive
 }

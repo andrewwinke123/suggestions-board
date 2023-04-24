@@ -7,6 +7,12 @@ const router = Router()
 // GET localhost:3000/suggestions
 router.get('/', suggestionsCtrl.index)
 
+// GET localhost:3000/suggestions/passive
+router.get('/passive', suggestionsCtrl.passive)
+
+// GET localhost:3000/suggestions/aggressive
+router.get('/aggressive', suggestionsCtrl.aggressive)
+
 // POST localhost:3000/suggestions
 router.post('/', isLoggedIn, suggestionsCtrl.create)
 

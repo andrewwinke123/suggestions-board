@@ -1,0 +1,29 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <% if (user) { %>
+    <h2>Add a Suggestion!</h2>
+    <form action="/suggestions/passive" method="POST">
+      <label> 
+        <textarea type="text" name="name" autocomplete="off" cols="30" rows="5"></textarea>
+      </label>
+      <button id="buttons" class="btn" type="submit">Suggestion</button>
+      <br>
+      <label 
+      for="myRange">Passive</label>
+      <input type="range" min="1" max="100" value="50" class="slider" id="myRange" name="passive">Aggressive
+    </label>
+  </form>
+  <% } %>
+  <h1>Suggestions:</h1>
+  <ul>
+    <% suggestions.forEach(suggestion => { %>
+      <li id="list">
+        <% if (suggestion.passive) {  %>
+        <a href="/suggestions/<%= suggestion._id %>"><%= suggestion.name %>.</a>   This suggestion was made <%= suggestion.passive ? 'lovingly. 🥺' : 'aggressively. 😤' %> </li>
+    <% }}) %>
+  </ul>
+</section>
+
+<%- include('../partials/footer') %>
