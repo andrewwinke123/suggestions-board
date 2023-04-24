@@ -118,7 +118,7 @@ function passive(req, res) {
   .then(suggestions => {
     res.render('suggestions/passive', {
       suggestions,
-      title: 'Suggestions?'
+      title: 'Passive'
     })
   })
   .catch(err => {
@@ -134,7 +134,7 @@ function aggressive(req, res) {
   .then(suggestions => {
     res.render('suggestions/aggressive', {
       suggestions,
-      title: 'Suggestions?'
+      title: 'Aggressive'
     })
   })
   .catch(err => {

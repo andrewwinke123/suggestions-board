@@ -86,18 +86,16 @@ nav > a {
   color: #424748;
 }
 
-nav > a:visited {
-  color: #a5e6f3;
-}
+
 
 nav > a:hover {
   color: white;
   background-color: #404040;
 }
 
-nav > a.active {
+nav a.active {
   color: rgb(152, 202, 240);
-}Z
+}
 
 
 .btn {

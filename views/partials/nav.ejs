@@ -4,9 +4,18 @@
 </head>
 <body>
   <nav>
-    <a href="/suggestions">WRITE</a>
-    <a href="/suggestions/passive">PASSIVE</a>
-    <a href="/suggestions/aggressive">AGGRESSIVE</a>
+    <a href="/suggestions" class=<%= title === 'Suggestions?' ? 'active' : '' %>
+      >
+      WRITE
+    </a>
+    <a href="/suggestions/passive" class=<%= title === 'Passive' ? 'active' : '' %>
+      >
+      PASSIVE
+    </a>
+    <a href="/suggestions/aggressive" class=<%= title === 'Aggressive' ? 'active' : '' %>
+      >
+      AGGRESSIVE
+    </a>
     <a href="/comments">NOTES</a>
     <% if (user) { %>
       <a href="/auth/logout" class="right">
