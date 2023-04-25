@@ -32,11 +32,14 @@ function create(req, res) {
 
 function show(req, res) {
   Suggestion.findById(req.params.suggestionId)
-  .populate('owner')
+  .populate([
+    {path: 'owner'},
+    {path: 'comments.author'}
+  ])
   .then(suggestion => {
     res.render('suggestions/show', {
-      suggestion,
-      title: 'suggestion show'
+      title: 'suggestion show',
+      suggestion
     })
   })
   .catch(err => {
