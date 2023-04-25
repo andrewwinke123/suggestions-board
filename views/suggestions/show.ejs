@@ -24,6 +24,14 @@
     <button id="buttons" class="btn" type="submit">Shun this suggestion 🙈</button>
   </form>
   <% } %>
+  <h2>Comments</h2>
+  <% if (user) { %>
+    <h3>Add a comment</h3>
+    <form action="/suggestions/<%= suggestion._id %>/comments" method="POST">
+    <textarea name="content"></textarea><br>
+    <button>Add Comment</button>
+  </form>
+  <% } %>
 </section>
 
 <%- include('../partials/footer') %>
