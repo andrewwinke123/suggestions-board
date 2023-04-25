@@ -32,7 +32,7 @@ router.patch('/:suggestionId/flip-passive', isLoggedIn, suggestionsCtrl.flipPass
 router.get('/:suggestionId/edit', isLoggedIn, suggestionsCtrl.edit)
 
 // PUT localhost:3000/suggestions/:suggestionId
-router.put('/:suggestioId', isLoggedIn, suggestionsCtrl.update)
+router.put('/:suggestionId', isLoggedIn, suggestionsCtrl.update)
 
 // DELETE localhost:3000/suggestions/:suggestionId
 router.delete('/:suggestionId', isLoggedIn, suggestionsCtrl.deleteSuggestion)

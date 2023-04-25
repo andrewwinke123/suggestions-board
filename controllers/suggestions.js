@@ -5,6 +5,7 @@ function index(req, res) {
   Suggestion.find({})
   .populate('owner')
   .then(suggestions => {
+    console.log(suggestions),
     res.render('suggestions/index', {
       suggestions,
       title: 'Suggestions?'
@@ -75,13 +76,15 @@ function edit(req, res) {
 }
 
 function update(req, res) {
+  console.log("OVER HERE THISTIME", req.params.suggestionId)
   Suggestion.findById(req.params.suggestionId)
   .then(suggestion => {
+    console.log("HERE!!!", suggestion)
     if (suggestion.owner.equals(req.user.profile._id)) {
       req.body.passive = !!req.body.passive
       suggestion.updateOne(req.body)
       .then(()=> {
-        res.redirect(`/suggections/${suggestion._id}`)
+        res.redirect(`/suggestions/${suggestion._id}`)
       })
     } else {
       throw new Error('🚫 Not authorized 🚫')

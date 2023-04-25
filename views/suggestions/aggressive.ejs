@@ -20,7 +20,7 @@
   <ul>
     <% suggestions.forEach(suggestion => { %>
       <li id="list">
-        <% if (suggestion.passive) {  %>
+        <% if (!suggestion.passive) {  %>
         <a href="/suggestions/<%= suggestion._id %>"><%= suggestion.name %>.</a>   This suggestion was made <%= suggestion.passive ? 'lovingly. 🥺' : 'aggressively. 😤' %> </li>
     <% }}) %>
   </ul>
