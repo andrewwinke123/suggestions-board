@@ -14,7 +14,7 @@ const suggestionSchema = new Schema({
   name: String,
   passive: Boolean,
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
-  comment: [commentSchema]
+  comments: [commentSchema]
 }, {
   timestamps: true
 })

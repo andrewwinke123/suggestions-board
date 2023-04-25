@@ -130,7 +130,6 @@ function passive(req, res) {
   })
 }
 
-
 function aggressive(req, res) {
   Suggestion.find({})
   .populate('owner')
@@ -149,8 +148,10 @@ function aggressive(req, res) {
 function addComment(req, res) {
   Suggestion.findById(req.params.suggestionId)
   .then(suggestion => {
+    console.log('!!!!!!!!!LOOK OVER HERE!!!!!!!!')
     req.body.author = req.user.profile._id
     suggestion.comments.push(req.body)
+    suggestion.save()
     .then(()=> {
       res.redirect(`/suggestions/${suggestion._id}`)
     })

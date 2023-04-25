@@ -25,7 +25,7 @@ router.get('/:suggestionId', suggestionsCtrl.show)
 router.patch('/:suggestionId/flip-passive', isLoggedIn, suggestionsCtrl.flipPassively)
 
 // POST localhost:3000/suggestions/suggestionId/comments
-router.post('/suggestionId/comments', isLoggedIn, suggestionsCtrl.addComment)
+router.post('/:suggestionId/comments', isLoggedIn, suggestionsCtrl.addComment)
 
 // GET localhost:3000/suggestions/:suggestionId/edit
 router.get('/:suggestionId/edit', isLoggedIn, suggestionsCtrl.edit)
