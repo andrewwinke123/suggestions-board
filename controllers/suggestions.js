@@ -146,6 +146,24 @@ function aggressive(req, res) {
   })
 }
 
+function addComment(req, res) {
+  Suggestion.findById(req.params.suggestionId)
+  .then(suggestion => {
+    req.body.author = req.user.profile._id
+    suggestion.comments.push(req.body)
+    .then(()=> {
+      res.redirect(`/suggestions/${suggestion._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/suggestions')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/suggestions')
+  })
+}
 
 
 
@@ -161,5 +179,6 @@ export {
   update,
   deleteSuggestion,
   passive,
-  aggressive
+  aggressive,
+  addComment
 }
