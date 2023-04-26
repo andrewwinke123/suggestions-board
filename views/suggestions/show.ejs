@@ -3,10 +3,11 @@
 
 <section>
 	<div class="author" >
-    <p>From the desk of <%= suggestion.owner.name %>... </p>
+    <p>From the desk of <%= suggestion.owner.name.split(" ")[0] %>... </p>
   </div>
   <h3>
-    <div class="suggestion-container"> <%= suggestion.name %> <% if (suggestion.owner.equals(user?.profile._id)) { %> </div>
+    <div class="suggestion-container"> <%= suggestion.name %> <% if (suggestion.owner.equals(user?.profile._id)) { %>
+    </div>
     <form action="/suggestions/<%= suggestion._id %>?_method=DELETE" method="POST">
       <button id="buttons" class="btn" type="submit">Delete</button>
     </form>
@@ -36,11 +37,6 @@
       <% suggestion.comments?.forEach(comment => { %>
         <li>
           <%= comment.content %> - <%= comment.author.name %>
-          <% if (comment.author.equals(user?.profile._id)) { %>
-            <a href="/suggestions/<%= suggestion._id %>/comments/ <%= comment._id %>/edit">
-              <button class="btn">Edit Comment</button>
-            </a>
-            <% } %>
         </li>
         <% }) %>
       </ul>

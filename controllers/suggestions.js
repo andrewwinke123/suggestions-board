@@ -169,25 +169,27 @@ function addComment(req, res) {
   })
 }
 
-function editComment(req, res) {
-  Suggestion.findById(req.params.suggestionId)
-  .then(suggestion => {
-    const comment =suggestion.comments.id(req.params.commentId)
-    if (comment.author.equals(req.user.profile._id)) {
-      res.render('suggestions/editComment', {
-        suggestion,
-        comment,
-        title: 'Update Comment'
-      })
-    } else {
-      throw new Error('🚫 Not authorized 🚫')
-    }
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/tacos')
-  })
-}
+// function editComment(req, res) {
+//   Suggestion.findById(req.params.suggestionId)
+//   .then(suggestion => {
+//     console.log(suggestion.comments)
+//     const comment = suggestion.comments.id(req.params.commentId);
+//     console.log('LOOK OVER HERE!!',comment)
+//     if (comment.author.equals(req.user.profile._id)) {
+//       res.render('suggestions/editComment', {
+//         suggestion,
+//         comment,
+//         title: 'Update Comment'
+//       })
+//     } else {
+//       throw new Error('🚫 Not authorized 🚫')
+//     }
+//   })
+//   .catch(err => {
+//     console.log(err)
+//     res.redirect('/suggestion')
+//   })
+// }
 
 
 
@@ -205,5 +207,5 @@ export {
   passive,
   aggressive,
   addComment,
-  editComment
+  // editComment
 }

@@ -16,7 +16,10 @@
       >
       AGGRESSIVE
     </a>
-    <a href="/comments">NOTES</a>
+    <a href="/suggestions/comments" class=<%= title === 'comments' ? 'active' : '' %>
+      >
+      COMMENTS
+    </a>
     <% if (user) { %>
       <a href="/auth/logout" class="right">
         <button type="submit">Logout</button>

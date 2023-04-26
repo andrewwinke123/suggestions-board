@@ -122,7 +122,7 @@ nav a.active {
   border-radius: 9px;
   border-style: double;
   display: inline-block;
-  padding: 60px;
+  padding: 20px 40px;
 }
 
 .suggestion-container {
