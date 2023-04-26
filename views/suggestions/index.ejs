@@ -19,8 +19,11 @@
   <h1>Suggestions:</h1>
   <ul>
     <% suggestions.forEach(suggestion => { %>
-      <li id="list">
-        <a href="/suggestions/<%= suggestion._id %>"><%= suggestion.name %>.</a>   This suggestion was made <%= suggestion.passive ? 'lovingly. 🥺' : 'aggressively. 😤' %> </li>
+      <div class="suggestion-list">
+        <li id="list">
+          <a href="/suggestions/<%= suggestion._id %>"><%= suggestion.name %>.</a>   This suggestion was made <%= suggestion.passive ? 'lovingly. 🥺' : 'aggressively. 😤' %> </li>
+          
+        </div>
     <% }) %>
   </ul>
 </section>
