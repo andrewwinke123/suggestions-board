@@ -9,7 +9,7 @@
     <div class="suggestion-container"> <%= suggestion.name %> <% if (suggestion.owner.equals(user?.profile._id)) { %>
     </div>
     <form action="/suggestions/<%= suggestion._id %>?_method=DELETE" method="POST">
-      <button id="buttons" class="btn" type="submit">Delete</button>
+      <button id="buttons" class="delete-button" type="submit">Delete</button>
     </form>
     <% } %>
   </h3>

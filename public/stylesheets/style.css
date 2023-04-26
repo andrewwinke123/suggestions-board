@@ -11,12 +11,24 @@ html {
   box-sizing: inherit;
 }
 
+.landing-page {
+  background-image:
+  url('/images/restti.gif');
+}
+
+.gif-containter {
+  margin-top: -220px;
+}
+
+
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #666666;
   color: #f6f6f6;
-  /* Use a system font, if none are available use any found sans-sarif font */
-  font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
-    'Helvetica Neue', sans-serif;
+  font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   margin: 0;
   border: 10px solid #17b7b5;
   height: 120vh;
@@ -24,24 +36,34 @@ body {
 }
 
 nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   background-color: #17b7b5;
   color: #1a1a1a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 10px;
   min-height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
 }
 
 main {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+
 h1 {
-  font-size: 36px;
+  font-size: 65px;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 h2 {
@@ -54,14 +76,13 @@ h3 {
 
 ul {
   list-style-type: none;
+  padding: 0;
 }
 
-p, label, li, button, input {
-  font-size: 18px;
-}
 
 label {
   font-weight: bold;
+  justify-content: center;
 }
 
 section {
@@ -70,11 +91,12 @@ section {
 
 a {
   color: #c6f0ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }
 
-pre {
-  font-size: 14px;
-}
 
 #passive-identifier {
   font-style: italic;
@@ -86,6 +108,9 @@ nav > a {
   padding: 10px;
   border-radius: 5px;
   color: #424748;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -103,15 +128,14 @@ nav a.active {
 .link {
   padding: 12px 0;
   font-size: 18px;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
 }
 
 .profile-avatar {
   margin-top: 50px;
-}
-
-.inline {
-  display: inline;
+  display: flex;
+  align-items: center;
 }
 
 
@@ -121,12 +145,16 @@ nav a.active {
   color: rgb(255, 255, 255);
   border-radius: 9px;
   border-style: double;
-  display: inline-block;
+  align-items: center;
   padding: 20px 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .suggestion-container {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  flex: 1;
   text-shadow: 1px 1px 1px #000000;
   border-radius: 9px;
   padding: 60px;
@@ -140,6 +168,12 @@ nav a.active {
   background-position: center;
 }
 
+.suggestion-and-delete-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 #add-comment-btn {
   border-radius: 9px;
@@ -150,6 +184,8 @@ nav a.active {
   color: #000000;
   display: inline-block;
   margin-right: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .button-container {
@@ -167,6 +203,8 @@ nav a.active {
   color: #ffffff;
   display: inline-block;
   margin-right: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 #edit-button {
@@ -177,6 +215,8 @@ nav a.active {
   font-size: 16px;
   color: #ffffff;
   display: inline-block;
+  display: flex;
+  justify-content: center;
 }
 
 #edit-button:hover {
@@ -187,6 +227,22 @@ nav a.active {
 #buttons:hover {
   background-color: #a5e6f3;
   color: #000000;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+}
+
+textarea {
+  resize: none;
+  width: 300px;
+  height: 150px;
+}
+
+.btn-suggestion {
+  margin-left: 125px;
+  align-self: flex-start;
 }
 
 #list a:visited{
@@ -203,13 +259,16 @@ nav a.active {
   padding: 5px;
   margin-bottom: 10px;
   border-radius: 5px;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
 }
+
 
 
 .suggestion-list:hover {
   background-color: rgb(0, 0, 0);
-  display: inline-block;
+  display: flex;
+  justify-content: center;
 }
 
 
