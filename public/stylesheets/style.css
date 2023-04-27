@@ -42,15 +42,28 @@ nav {
   align-items: center;
   background-color: #17b7b5;
   color: #1a1a1a;
-  padding: 10px;
+  padding: 5px;
   min-height: 60px;
   width: 100%;
   position: fixed;
+  font-size: 40px;
   top: 0;
   left: 0;
   right: 0;
   z-index: 999;
 }
+.page-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.page-content-1st{
+
+}
+
+
 
 main {
   display: flex;

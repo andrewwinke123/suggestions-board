@@ -8,11 +8,6 @@
   <main>
     <h1><%= user ? user.profile.name + ', welcome' : `Resetti says sign in` %>  
     </a>
-      <% if (user) { %>
-        <a href="/auth/logout" class="right">
-          <button type="submit">Logout</button>
-        </a>
-      <% } else { %>
         <div 
           id="g_id_onload"
           data-client_id="<%= googleClientID %>"
@@ -31,7 +26,7 @@
           data-logo_alignment="left"
         >
         </div>
-      <% } %> </h1>
+    </h1>
     <% if (user?.profile.avatar) { %>
       <div>
         <img

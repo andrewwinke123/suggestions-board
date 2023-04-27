@@ -2,15 +2,17 @@
 <%- include('../partials/nav') %>
 
 <div class="suggestion-form">
-<section>
+<section class="page-content">
   <% if (user) { %>
+   <div class="page-content-1st">
     <h2>Add a Suggestion!</h2>
-        <form action="/suggestions" method="POST">
-          <label> 
-            <textarea type="text" name="name" autocomplete="off" cols="30" rows="5"></textarea>
-          </label>
-          <button id="buttons" class="btn btn-suggestion" type="submit">Suggestion</button>
-      </div>
+    <form action="/suggestions" method="POST">
+      <label> 
+        <textarea type="text" name="name" autocomplete="off" cols="30" rows="5"></textarea>
+      </label>
+      <button id="buttons" class="btn btn-suggestion" type="submit">Suggestion</button>
+    </div>
+    </div>
       <br>
       <label 
         for="myRange">Passive
