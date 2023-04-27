@@ -29,7 +29,7 @@ router.post('/:suggestionId/comments', isLoggedIn, suggestionsCtrl.addComment)
 
 // DELETE localhost:3000/
 router.delete('/:suggestionId/comments/:commentId', isLoggedIn, suggestionsCtrl.deleteComment)
-,
+
 // GET localhost:3000/suggestions/:suggestionId/edit
 router.get('/:suggestionId/edit', isLoggedIn, suggestionsCtrl.edit)
 

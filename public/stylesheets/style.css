@@ -126,7 +126,8 @@ nav > a:hover {
 }
 
 nav a.active {
-	color: rgb(152, 202, 240);
+	color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 1px #000000;
 }
 
 .link {
@@ -316,3 +317,4 @@ textarea {
 	align-items: center;
 	margin-top: -500px;
 }
+

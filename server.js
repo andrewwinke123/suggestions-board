@@ -8,7 +8,6 @@ import session from 'express-session'
 import logger from 'morgan'
 import methodOverride from 'method-override'
 import passport from 'passport'
-import { router as suggestionsRouter } from './routes/suggestions.js'
 
 // import custom middleware
 import { passDataToView } from './middleware/middleware.js'
@@ -22,6 +21,7 @@ import'./config/passport.js'
 // import routes
 import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
+import { router as suggestionsRouter } from './routes/suggestions.js'
 
 // create the express app
 const app = express()

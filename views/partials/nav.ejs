@@ -1,23 +1,48 @@
-  <% if (!user) { %>
-    <script defer src="https://accounts.google.com/gsi/client"></script>
-  <% } %>
+<% if (!user) { %>
+	<script defer src="https://accounts.google.com/gsi/client"></script>
 </head>
 <body>
   <nav>
+    <a href="/" class=<%= title === 'Home Page' ? 'active' : '' %>
+      >
+			HOME
+		</a>
     <a href="/suggestions" class=<%= title === 'Suggestions?' ? 'active' : '' %>
       >
-      WRITE
-    </a>
-    <a href="/suggestions/passive" class=<%= title === 'Passive' ? 'active' : '' %>
+			WRITE
+		</a>
+		<a href="/suggestions/passive" class=<%= title === 'Passive' ? 'active' : '' %>
       >
-      PASSIVE
-    </a>
-    <a href="/suggestions/aggressive" class=<%= title === 'Aggressive' ? 'active' : '' %>
+			PASSIVE
+		</a>
+		<a href="/suggestions/aggressive" class=<%= title === 'Aggressive' ? 'active' : '' %>
       >
-      AGGRESSIVE
-    </a>
-    <a href="/auth/logout">
-        <button> LOG OUT 
-        </button>
-    </a>
-  </nav>
+			AGGRESSIVE
+		</a>
+    
+    <% } else { %>
+      <nav>
+        <a href="/" class=<%= title === 'Home Page' ? 'active' : '' %>
+          >
+          HOME
+        </a>
+        <a href="/suggestions" class=<%= title === 'Suggestions?' ? 'active' : '' %>
+          >
+          WRITE
+        </a>
+        <a href="/suggestions/passive" class=<%= title === 'Passive' ? 'active' : '' %>
+          >
+          PASSIVE
+        </a>
+        <a href="/suggestions/aggressive" class=<%= title === 'Aggressive' ? 'active' : '' %>
+          >
+          AGGRESSIVE
+        </a>
+          <a href="/auth/logout" class=<%= title === 'Log out' ? 'active' : '' %>
+            >
+            LOG OUT
+          </a>
+      </a>
+      </nav>
+        <% } %>
+	</nav>

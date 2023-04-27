@@ -2,19 +2,17 @@
 <%- include('../partials/nav') %>
 
 <section class="page-content">
-  <h1>Edit the Suggestion! 🏗️</h1>
-  <form action="/suggestions/<%= suggestion._id %>?_method=PUT" method="POST">
-    <label>
-      <textarea type="text" name="name" autocomplete="off" cols="40" rows="8"value="<%= suggestion.name %>" 
-        autocomplete="off"><%= suggestion.name %></textarea>
-    </label>
-    <button id="edit-button" class="btn" type="submit">Edit</button>
-    <br>  
-    <label 
-        for="myRange">Passive</label>
-        <input type="range" min="1" max="100" value="50" class="slider" id="myRange" name="passive">Aggressive
-    </label>    
-  </form>
+	<h1>Edit the Suggestion! 🏗️</h1>
+	<form action="/suggestions/<%= suggestion._id %>?_method=PUT" method="POST">
+		<label>
+			<textarea type="text" name="name" autocomplete="off" cols="40" rows="8" value="<%= suggestion.name %>" autocomplete="off"><%= suggestion.name %></textarea>
+		</label>
+		<button id="edit-button" class="btn" type="submit">Edit</button>
+		<br>  
+		<label for="myRange">Passive</label>
+		<input type="range" min="1" max="100" value="50" class="slider" id="myRange" name="passive">Aggressive
+		</label>    
+	</form>
 </section>
 
 <%- include('../partials/footer') %>

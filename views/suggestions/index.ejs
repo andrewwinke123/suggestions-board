@@ -2,34 +2,33 @@
 <%- include('../partials/nav') %>
 
 <div class="suggestion-form">
-<section class="page-content">
-  <% if (user) { %>
-   <div class="page-content-1st">
-    <h2>Add a Suggestion!</h2>
-    <form action="/suggestions" method="POST">
-      <label> 
-        <textarea type="text" name="name" autocomplete="off" cols="30" rows="5"></textarea>
-      </label>
-      <button id="buttons" class="btn btn-suggestion" type="submit">Suggestion</button>
-    </div>
-    </div>
-      <br>
-      <label 
-        for="myRange">Passive
-        <input type="range" min="1" max="100" value="50" class="slider" id="myRange" name="passive">Aggressive
-      </label>
-  </form>
-  <% } %>
-  <h1>Suggestions:</h1>
-  <ul>
-    <% suggestions.forEach(suggestion => { %>
-      <div class="suggestion-list">
-        <li id="list">
-          <a href="/suggestions/<%= suggestion._id %>"><%= suggestion.name %>.</a>   This suggestion was made <%= suggestion.passive ? 'lovingly. 🥺' : 'aggressively. 😤' %> </li>
+	<section class="page-content">
+		<% if (user) { %>
+			<div class="page-content-1st">
+				<h2>Add a Suggestion!</h2>
+				<form action="/suggestions" method="POST">
+					<label>
+						<textarea type="text" name="name" autocomplete="off" cols="30" rows="5"></textarea>
+					</label>
+					<button id="buttons" class="btn btn-suggestion" type="submit">Suggestion</button>
+				</div>
+			</div>
+			<br>
+			<label for="myRange">Passive
+				<input type="range" min="1" max="100" value="50" class="slider" id="myRange" name="passive">Aggressive
+			</label>
+		</form>
+		<% } %>
+		<h1>Suggestions:</h1>
+		<ul>
+			<% suggestions.forEach(suggestion => { %>
+				<div class="suggestion-list">
+					<li id="list">
+						<a href="/suggestions/<%= suggestion._id %>"><%= suggestion.name %>.</a> This suggestion was made <%= suggestion.passive ? 'lovingly. 🥺' : 'aggressively. 😤' %>
+					</li>
+				</div>
+			<% }) %>
+		</ul>
+	</section>
 
-        </div>
-    <% }) %>
-  </ul>
-</section>
-
-<%- include('../partials/footer') %>
+	<%- include('../partials/footer') %>

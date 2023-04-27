@@ -113,7 +113,7 @@ function deleteSuggestion(req, res) {
 }
 
 function passive(req, res) {
-	Suggestion.find({})
+	Suggestion.find({ passive: true })
 	.populate('owner')
 	.then(suggestions => {
 		res.render('suggestions/passive', {
@@ -128,7 +128,7 @@ function passive(req, res) {
 }
 
 function aggressive(req, res) {
-	Suggestion.find({})
+	Suggestion.find({ passive: false })
 	.populate('owner')
 	.then(suggestions => {
 		res.render('suggestions/aggressive', {
