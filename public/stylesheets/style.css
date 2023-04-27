@@ -59,6 +59,12 @@ main {
   align-items: center;
 }
 
+.suggestion-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 h1 {
   font-size: 65px;
@@ -103,9 +109,9 @@ a {
 }
 
 nav > a {
-  margin: 20px;
+  margin: 1px;
   text-decoration: none;
-  padding: 10px;
+  padding: 5px;
   border-radius: 5px;
   color: #424748;
   display: flex;
@@ -182,7 +188,6 @@ nav a.active {
   text-decoration: none;
   font-size: 24px;
   color: #000000;
-  display: inline-block;
   margin-right: 10px;
   display: flex;
   justify-content: center;
@@ -201,7 +206,6 @@ nav a.active {
   text-decoration: none;
   font-size: 24px;
   color: #ffffff;
-  display: inline-block;
   margin-right: 10px;
   display: flex;
   justify-content: center;
@@ -214,8 +218,12 @@ nav a.active {
   text-decoration: none;
   font-size: 16px;
   color: #ffffff;
-  display: inline-block;
   display: flex;
+  justify-content: center;
+}
+
+.btn-suggestion {
+  align-self: flex-start;
   justify-content: center;
 }
 
@@ -240,10 +248,6 @@ textarea {
   height: 150px;
 }
 
-.btn-suggestion {
-  margin-left: 125px;
-  align-self: flex-start;
-}
 
 #list a:visited{
   color: #04c0ff;
@@ -255,14 +259,27 @@ textarea {
 }
 
 #list {
-  background-color: rgb(71, 71, 71);
   padding: 5px;
   margin-bottom: 10px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
+
+.comment-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.comment-content {
+  flex: 1;
+}
+
+.delete-button {
+  margin-left: -50px;
+}
 
 
 .suggestion-list:hover {
@@ -270,11 +287,6 @@ textarea {
   display: flex;
   justify-content: center;
 }
-
-
-
-
-
 
 
 

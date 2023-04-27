@@ -193,7 +193,29 @@ function addComment(req, res) {
 
 
 
-
+function deleteComment(req, res) {
+  Suggestion.findById(req.params.suggestionId)
+  .then(suggestion => {
+    const comment = suggestion.comments.id(req.params.commentId)
+    if (comment.author.equals(req.user.profile._id)) {
+      suggestion.comments.remove(comment)
+      suggestion.save()
+      .then(() => {
+        res.redirect(`/suggestions/${suggestion._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/suggestions')
+      })
+    } else {
+      throw new Error('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/suggestions')
+  })
+}
 
 
 export {
@@ -207,5 +229,6 @@ export {
   passive,
   aggressive,
   addComment,
-  // editComment
+  // editComment,
+  deleteComment
 }

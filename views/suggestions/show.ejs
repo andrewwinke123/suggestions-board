@@ -2,51 +2,56 @@
 <%- include('../partials/nav') %>
 
 <section>
-	<div class="author" >
-    <p>From the desk of <%= suggestion.owner.name.split(" ")[0] %>... </p>
-  </div>
-  <h3>
-    <div class="suggestion-container"> <%= suggestion.name %> <% if (suggestion.owner.equals(user?.profile._id)) { %>
+    <div class="author">
+        <p>From the desk of <%= suggestion.owner.name.split(" ")[0] %>... </p>
     </div>
-    <form action="/suggestions/<%= suggestion._id %>?_method=DELETE" method="POST">
-      <button id="buttons" class="delete-button" type="submit">Delete</button>
-    </form>
-    <% } %>
-  </h3>
-  <p id="passive-identifier"><%= suggestion.passive ? 'passive 🥺' : 'passive aggresive 😫' %></p>
-  <div class="button-container">
-    <% if (user) { %>
-      <form 
-      action="/suggestions/<%= suggestion._id %>/flip-passive?_method=PATCH" 
-      method="POST"
-      >
-      <button id="buttons" class="btn" type="submit">
-        Suggest <%= suggestion.passive ? 'aggresively 😤' : 'passively 🥺' %>
-      </button>
-    </form>
-    <% } %>
-    <% if (suggestion.owner.equals(user?.profile._id)) { %>
-      <a href="/suggestions/<%= suggestion._id %>/edit">
-        <button id="buttons" class="btn"> Edit this Suggestion 🏗️</button>
-      </a>
-      </form>
-      <% } %>
+    <h3>
+        <div class="suggestion-container"> <%= suggestion.name %> <% if (suggestion.owner.equals(user?.profile._id)) { %>
+        </div>
+        <form action="/suggestions/<%= suggestion._id %>?_method=DELETE" method="POST">
+            <button id="buttons" class="delete-button" type="submit">
+                Delete
+            </button>
+        </form>
+        <% } %>
+    </h3>
+    <p id="passive-identifier"><%= suggestion.passive ? 'passive 🥺' : 'passive aggresive 😫' %></p>
+    <div class="button-container">
+        <% if (user) { %>
+        <form action="/suggestions/<%= suggestion._id %>/flip-passive?_method=PATCH" method="POST">
+            <button id="buttons" class="btn" type="submit">
+                Suggest <%= suggestion.passive ? 'aggresively 😤' : 'passively 🥺' %>
+            </button>
+        </form>
+        <% } %>
+        <% if (suggestion.owner.equals(user?.profile._id)) { %>
+        <a href="/suggestions/<%= suggestion._id %>/edit">
+            <button id="buttons" class="btn"> Edit this Suggestion 🏗️</button>
+        </a>
+        </form>
+        <% } %>
     </div>
-  <h2>Comments:</h2>  
-    <ul>
-      <% suggestion.comments?.forEach(comment => { %>
+    <h2>Comments:</h2>
+    <ul class="comments">
+        <% suggestion.comments?.forEach(comment => { %>
         <li>
-          <%= comment.content %> - <%= comment.author.name %>
+            <div class="comment-wrapper">
+                <div class="comment-content"><%= comment.content %> </div>
+                <% if (comment.author.equals(user?.profile)) { %>
+                <form action="/suggestions/<%= suggestion._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST" class="inline">
+                    <button class="delete-button" type="submit">Delete</button>
+                </form>
+                <% } %>
+            </div>
         </li>
         <% }) %>
-      </ul>
-  <% if (user) { %>
+    </ul>
+    <% if (user) { %>
     <h3>Add a comment</h3>
     <form action="/suggestions/<%= suggestion._id %>/comments" method="POST">
-    <textarea name="content" ></textarea><br>
-    <button>Add Comment</button>
-  </form>
-  <% } %>
+        <textarea name="content"></textarea><br>
+        <button>Add Comment</button>
+    </form>
+    <% } %>
 </section>
-
 <%- include('../partials/footer') %>

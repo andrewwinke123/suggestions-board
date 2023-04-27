@@ -1,14 +1,16 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
+<div class="suggestion-form">
 <section>
   <% if (user) { %>
     <h2>Add a Suggestion!</h2>
-    <form action="/suggestions" method="POST">
-      <label> 
-        <textarea type="text" name="name" autocomplete="off" cols="30" rows="5"></textarea>
-      </label>
-      <button id="buttons" class="btn btn-suggestion" type="submit">Suggestion</button>
+        <form action="/suggestions" method="POST">
+          <label> 
+            <textarea type="text" name="name" autocomplete="off" cols="30" rows="5"></textarea>
+          </label>
+          <button id="buttons" class="btn btn-suggestion" type="submit">Suggestion</button>
+      </div>
       <br>
       <label 
         for="myRange">Passive
