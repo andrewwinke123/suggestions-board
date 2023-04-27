@@ -1,11 +1,12 @@
 <%- include('./partials/html-head') %>
 <%- include('./partials/nav') %>
 
-<div class="404">
-  <h1><%= message %></h1>
-  <h2><%= error.status %></h2>
-  <pre><%= error.stack %></pre>
-  <img src="/images/404-error.jpg" alt="">
+<div class="error-page">
+  <div class="four-o-four">
+    <h1><%= message %></h1>
+    <h2><%= error.status %></h2>
+    <pre><%= error.stack %></pre>
+  </div>
 </div>
 
 <%- include('./partials/footer') %>

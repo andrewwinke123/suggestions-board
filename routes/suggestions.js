@@ -27,9 +27,6 @@ router.patch('/:suggestionId/flip-passive', isLoggedIn, suggestionsCtrl.flipPass
 // POST localhost:3000/suggestions/suggestionId/comments
 router.post('/:suggestionId/comments', isLoggedIn, suggestionsCtrl.addComment)
 
-// // PUT localhost:3000/suggestions/:suggestionId/comments/:commentId/edit
-// router.put('/:suggestionId/comments/:commentId/edit', isLoggedIn, suggestionsCtrl.editComment)
-
 // DELETE localhost:3000/
 router.delete('/:suggestionId/comments/:commentId', isLoggedIn, suggestionsCtrl.deleteComment)
 ,

@@ -3,24 +3,22 @@ import { isLoggedIn } from '../middleware/middleware.js'
 
 const Schema = mongoose.Schema
 
-const commentSchema = mongoose.Schema( {
-  content: String,
-  author: { type: Schema.Types.ObjectId, ref: "Profile"}
+const commentSchema = mongoose.Schema({
+	content: String,
+	author: { type: Schema.Types.ObjectId, ref: "Profile" }
 })
 
-
-
 const suggestionSchema = new Schema({
-  name: String,
-  passive: Boolean,
-  owner: {type: Schema.Types.ObjectId, ref: "Profile"},
-  comments: [commentSchema]
+	name: String,
+	passive: Boolean,
+	owner: { type: Schema.Types.ObjectId, ref: "Profile" },
+	comments: [commentSchema]
 }, {
-  timestamps: true
+	timestamps: true
 })
 
 const Suggestion = mongoose.model('Suggestion', suggestionSchema)
 
 export {
-  Suggestion
+	Suggestion
 }
