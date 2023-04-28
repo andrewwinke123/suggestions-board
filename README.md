@@ -25,11 +25,12 @@ To use the app, just sign in and from there you can view suggestions, write sugg
 - CSS
 - JavaScript
 - MongoDB
-- Node
+- Node.js
 - Mongoose
 - EJS
-- Express
+- Express.js
 - Google OAuth
+- Docker
 - https://ui-buttons.web.app/sandwish
 - https://www.geeksforgeeks.org/css-floating-animation/
 
