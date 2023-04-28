@@ -4,11 +4,13 @@
 <section class="page-content">
 	<h1>Passive Aggressive Suggestions:</h1>
 	<ul>
-		<% suggestions.forEach(suggestion => { %>
+    <% suggestions.forEach(suggestion => { %>
+      <div class="suggestion-list">
 			<li id="list">
 				<% if (!suggestion.passive) {  %>
 					<a href="/suggestions/<%= suggestion._id %>"><%= suggestion.name %></a> This suggestion was made <%= suggestion.passive ? 'lovingly. 🥺' : 'aggressively. 😤' %> 
 				</li>
+      </div>
 		<% }}) %>
 	</ul>
 </section>

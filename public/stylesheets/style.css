@@ -366,7 +366,7 @@ textarea {
 .suggestion-list:-moz-focusring {
   outline: auto;
 }
-.btn-97 svg {
+.suggestion-list svg {
   display: block;
   vertical-align: middle;
 }
