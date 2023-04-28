@@ -2,56 +2,67 @@
 <%- include('../partials/nav') %>
 
 <section>
-    <div class="author">
-        <p>From the desk of <%= suggestion.owner.name.split(" ")[0] %>... </p>
-    </div>
-    <h3>
-        <div class="suggestion-container"> <%= suggestion.name %> <% if (suggestion.owner.equals(user?.profile._id)) { %>
-        </div>
-        <form action="/suggestions/<%= suggestion._id %>?_method=DELETE" method="POST">
-            <button id="buttons" class="delete-button" type="submit">
-                Delete
-            </button>
-        </form>
-        <% } %>
-    </h3>
-    <p id="passive-identifier"><%= suggestion.passive ? 'passive 🥺' : 'passive aggresive 😫' %></p>
-    <div class="button-container">
-        <% if (user) { %>
-        <form action="/suggestions/<%= suggestion._id %>/flip-passive?_method=PATCH" method="POST">
-            <button id="buttons" class="btn" type="submit">
-                Suggest <%= suggestion.passive ? 'aggresively 😤' : 'passively 🥺' %>
-            </button>
-        </form>
-        <% } %>
-        <% if (suggestion.owner.equals(user?.profile._id)) { %>
-        <a href="/suggestions/<%= suggestion._id %>/edit">
-            <button id="buttons" class="btn"> Edit this Suggestion 🏗️</button>
-        </a>
-        </form>
-        <% } %>
-    </div>
-    <h2>Comments:</h2>
-    <ul class="comments">
-        <% suggestion.comments?.forEach(comment => { %>
-        <li>
-            <div class="comment-wrapper">
-                <div class="comment-content"><%= comment.content %> </div>
-                <% if (comment.author.equals(user?.profile)) { %>
-                <form action="/suggestions/<%= suggestion._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST" class="inline">
-                    <button class="delete-button" type="submit">Delete</button>
-                </form>
-                <% } %>
-            </div>
-        </li>
-        <% }) %>
-    </ul>
-    <% if (user) { %>
-    <h3>Add a comment</h3>
-    <form action="/suggestions/<%= suggestion._id %>/comments" method="POST">
-        <textarea name="content"></textarea><br>
-        <button id="add-comment-btn"class="btn-97">Add Comment</button>
+	<div class="author">
+		<p>From the desk of <%= suggestion.owner.name.split(" ")[0] %>... </p>
+	</div>
+	<h3>
+		<div class="suggestion-container"> <%= suggestion.name %> <% if (suggestion.owner.equals(user?.profile._id)) { %>
+		</div>
+		<form action="/suggestions/<%= suggestion._id %>?_method=DELETE" method="POST"> 
+			<p id="passive-identifier"><%= suggestion.passive ? 'passive 🥺' : 'passive aggresive 😫' %>
+      </p>
+		</form>
+		<% } %>
+	</h3>
+	<div class="button-container">
+		<% if (user) { %>
+		<form action="/suggestions/<%= suggestion._id %>/flip-passive?_method=PATCH" method="POST">
+			<button id="buttons" class="btn" type="submit">
+				Suggest <%= suggestion.passive ? 'aggresively 😤' : 'passively 🥺' %>
+			</button>
+		</form>
+		<% } %>
+		<% if (suggestion.owner.equals(user?.profile._id)) { %>
+		<a href="/suggestions/<%= suggestion._id %>/edit">
+			<button id="buttons" class="btn"> Edit this Suggestion 🏗️</button>
+		</a>
+		<form action="/suggestions/<%= suggestion._id %>?_method=DELETE" method="POST"> 
+		<button id="buttons" class="delete-button" type="submit">
+			Delete
+		</button>
     </form>
-    <% } %>
+		<% } %>
+	</div>
+	<h2>Comments</h2>
+	<table class="comments">
+		<thead>
+			<tr>
+				<th>Comment:</th>
+				<th>Delete</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% suggestion.comments?.forEach(comment => { %>
+			<tr>
+				<td class="comment-content"><%= comment.content %></td>
+				<td>
+					<% if (comment.author.equals(user?.profile)) { %>
+					<form action="/suggestions/<%= suggestion._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST" class="inline">
+						<button class="delete-button" type="submit">Delete</button>
+					</form>
+					<% } %>
+				</td>
+			</tr>
+			<% }) %>
+		</tbody>
+	</table>
+
+	<% if (user) { %>
+	<h3>Add a comment</h3>
+	<form action="/suggestions/<%= suggestion._id %>/comments" method="POST">
+		<textarea name="content"></textarea><br>
+		<button id="add-comment-btn" class="btn-97">Add Comment</button>
+	</form>
+	<% } %>
 </section>
 <%- include('../partials/footer') %>

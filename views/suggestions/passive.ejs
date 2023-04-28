@@ -1,14 +1,15 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<section class="page-content">
+<section>
 	<div class="passive-aggressive-ul"><h1>Passive Suggestions:</h1></div>
 	<ul>
 		<% suggestions.forEach(suggestion => { %>
       <div class="suggestion-list">
 			<li id="list">
 				<% if (suggestion.passive) {  %>
-					<a href="/suggestions/<%= suggestion._id %>"><%= suggestion.name %>.</a> This suggestion was made <%= suggestion.passive ? 'lovingly. 🥺' : 'aggressively. 😤' %>
+					<a href="/suggestions/<%= suggestion._id %>"><%= suggestion.name %>. This suggestion was made <%= suggestion.passive ? 'lovingly. 🥺' : 'aggressively. 😤' %> 
+          </a>
 			</li>
       </div>
 		<% }}) %>

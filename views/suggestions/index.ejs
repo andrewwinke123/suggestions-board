@@ -1,14 +1,14 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<div class="suggestion-form">
-	<section class="page-content">
-		<% if (user) { %>
-			<div class="page-content-1st">
-				<h2>Add a Suggestion!</h2>
+<section>
+  <% if (user) { %>
+    <div class="suggestion-form">
+    <h2>Add a Suggestion!</h2>
 				<form action="/suggestions" method="POST">
 					<label>
-						<textarea type="text" name="name" autocomplete="off" cols="30" rows="5"></textarea>
+						<textarea type="text" name="name" autocomplete="off" cols="30" rows="5">
+            </textarea>
 					</label>
 					<button id="add-comment-btn" class="btn-97" type="submit">Suggestion 
           </button>
@@ -16,16 +16,16 @@
             make suggestion passive
             <input type="checkbox" name="passive">
           </label>
-				</div>
+        </form>
 			</div>
-		</form>
-		<% } %>
+        <% } %>
 		<h1>Suggestions:</h1>
 		<ul>
 			<% suggestions.forEach(suggestion => { %>
 				<div class="suggestion-list">
 					<li id="list">
-						<a href="/suggestions/<%= suggestion._id %>"><%= suggestion.name %>.</a> This suggestion was made <%= suggestion.passive ? 'lovingly. 🥺' : 'aggressively. 😤' %>
+						<a href="/suggestions/<%= suggestion._id %>"><%= suggestion.name %>. This suggestion was made <%= suggestion.passive ? 'lovingly. 🥺' : 'aggressively. 😤' %>
+            </a>
 					</li>
 				</div>
 			<% }) %>
