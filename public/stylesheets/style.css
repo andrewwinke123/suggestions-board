@@ -25,7 +25,6 @@ body {
 	background-color: #666666;
 	color: #f6f6f6;
 	font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-	margin: 0;
 	border: 10px solid #17b7b5;
 	height: 120vh;
 	text-align: center;
@@ -48,18 +47,27 @@ nav {
 	right: 0;
 	z-index: 999;
 }
-.page-content {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
-}
 
 main {
-	display: flex;
+  display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+.page-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.passive-aggressive-u {
+  margin-top: 120px;
+  padding-top: 120px;
+}
+
+.page-content-1st {
+  margin-top: 500px;
+  padding-top: 0px;
 }
 
 .suggestion-form {
@@ -71,7 +79,7 @@ main {
 
 h1 {
 	font-size: 65px;
-	margin-top: 0;
+	margin-top: -500;
 	padding-top: 0;
 }
 
@@ -168,7 +176,7 @@ nav a.active {
 	),
 	url('/images/passive-aggressive.gif');
 	background-size: cover;
-	background-position: center
+	background-position: center;
 }
 
 .suggestion-and-delete-container {
@@ -187,6 +195,8 @@ nav a.active {
 	margin-right: 10px;
 	display: flex;
 	justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .button-container {
@@ -218,6 +228,7 @@ nav a.active {
 	justify-content: center;
 }
 
+
 .btn-suggestion {
 	align-self: flex-start;
 	justify-content: center;
@@ -228,7 +239,7 @@ nav a.active {
 	color: #000000;
 }
 
-#buttons:hover {
+#add-comment-btn:hover {
 	background-color: #a5e6f3;
 	color: #000000;
 }
@@ -246,10 +257,6 @@ textarea {
 
 #list a:visited {
 	color: #04c0ff;
-}
-
-#list a:hover {
-	background-color: rgb(0, 0, 0);
 }
 
 #list {
@@ -318,3 +325,220 @@ textarea {
 	margin-top: -500px;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+.suggestion-list,
+.suggestion-list *,
+.suggestion-list :after,
+.suggestion-list :before,
+.suggestion-list:after,
+.suggestion-list:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.suggestion-list {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 75%;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+}
+.suggestion-list:disabled {
+  cursor: default;
+}
+.suggestion-list:-moz-focusring {
+  outline: auto;
+}
+.btn-97 svg {
+  display: block;
+  vertical-align: middle;
+}
+.suggestion-list [hidden] {
+  display: none;
+}
+.suggestion-list {
+  background: #818181;
+  border: 1px solid;
+  border-radius: 9px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: block;
+  font-weight: 900;
+  -webkit-mask-image: none;
+  overflow: hidden;
+  position: relative;
+  text-transform: uppercase;
+  transition: 0.2s;
+}
+.suggestion-list:hover {
+  box-shadow: 0 6px 0 -4px #fff, 0 9px 0 -4px #aaa, 0 12px 0 -4px #000;
+  transform: translateY(-5px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-97,
+.btn-97 *,
+.btn-97 :after,
+.btn-97 :before,
+.btn-97:after,
+.btn-97:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.btn-97 {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+}
+.btn-97:disabled {
+  cursor: default;
+}
+.btn-97:-moz-focusring {
+  outline: auto;
+}
+.btn-97 svg {
+  display: block;
+  vertical-align: middle;
+}
+.btn-97 [hidden] {
+  display: none;
+}
+.btn-97 {
+  background: #fff;
+  border: 1px solid;
+  border-radius: 999px;
+  box-sizing: border-box;
+  color: #000;
+  display: block;
+  font-weight: 900;
+  -webkit-mask-image: none;
+  overflow: hidden;
+  padding: 1.2rem 3rem;
+  position: relative;
+  text-transform: uppercase;
+  transition: 0.2s;
+}
+.btn-97:hover {
+  box-shadow: 0 6px 0 -4px #fff, 0 9px 0 -4px #aaa, 0 12px 0 -4px #000;
+  transform: translateY(-5px);
+}
+
+
+
+
+
+
+.dvd-animation {
+  animation-name: bouncing;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+@keyframes bouncing {
+  0% {
+    transform: translateX(50%) translateY(50%);
+  }
+  16.67% {
+    transform: translateX(-25%) translateY(110%);
+  }
+  33.33% {
+    transform: translateX(0%) translateY(155%);
+  }
+  50% {
+    transform: translateX(25%) translateY(100%);
+  }
+  66.67% {
+    transform: translateX(-45%) translateY(-45%);
+  }
+  83.33% {
+    transform: translateX(-10%) translateY(-200%);
+  }
+  100% {
+    transform: translateX(50%) translateY(50%);
+  }
+}
+
+
+
+
+
+.dvd-animation-two {
+  animation-name: bouncing-two;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+@keyframes bouncing-two {
+  0% {
+    transform: translateX(-450%) translateY(-450%);
+  }
+  16.67% {
+    transform: translateX(420%) translateY(-400%);
+  }
+  33.33% {
+    transform: translateX(-450%) translateY(-100%);
+  }
+  50% {
+    transform: translateX(-150%) translateY(195%);
+  }
+  66.67% {
+    transform: translateX(-450%) translateY(-450%);
+  }
+  83.33% {
+    transform: translateX(420%) translateY(-250%);
+  }
+  100% {
+    transform: translateX(-450%) translateY(-450%);
+  }
+}
