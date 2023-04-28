@@ -16,7 +16,7 @@ To use the app, just sign in and from there you can view suggestions, write sugg
 
 ## Demo
 
-[Suggestions Board](suggestions-board.fly.dev)
+[Suggestions Board](https://suggestions-board.fly.dev)
 
 ## Technology Used
 
@@ -39,16 +39,19 @@ To use the app, just sign in and from there you can view suggestions, write sugg
 
 
 - [ui-buttons.web](https://ui-buttons.web.app/sandwish)
-<br>
+
 I grabbed this code for some of my buttons and links in different ways.
+
 - [geeksforgeeks](https://www.geeksforgeeks.org/css-floating-animation/)
-<br>
+
 I refactored the code from this site and made the screensaver feature out of it.
+
 - [animal crossing gif](https://tenor.com/view/passive-agressive-anger-gif-20076223)
-<br>
+
 I used this little passive-aggressive animal crossing character to set the mood.
+
 - [wifflegif. com](https://wifflegif.com/gifs/706088-animal-crossing-video-game-gif)
-<br>
+
 I used the image from this site as the basis for the gif I created by chopping the picture up and editing it back together.
 
 
